@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kronos Centro Médico de Alto Rendimiento en San Juan, Argentina. Medicina del deporte, cardiología, traumatología, nutrición y más. Pedí tu turno por WhatsApp.">
+<title>Kronos | Centro Médico de Alto Rendimiento · San Juan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Kronos Centro Médico de Alto Rendimiento",
+  "description": "Centro Médico de Alto Rendimiento en San Juan, Argentina. Medicina del deporte, cardiología, traumatología y más.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Santa Fe 264 Oeste",
+    "addressLocality": "San Juan",
+    "addressRegion": "San Juan",
+    "addressCountry": "AR"
+  },
+  "telephone": "+54-264-422-1470",
+  "url": "https://www.instagram.com/kronosar/",
+  "sameAs": ["https://www.instagram.com/kronosar/"]
+}
+</script>
+
+<style>
+  :root {
+    --azul: #0B3D6B;
+    --azul-claro: #1565A8;
+    --celeste: #2196F3;
+    --verde: #1E88E5;
+    --verde-dark: #1565C0;
+    --blanco: #FFFFFF;
+    --gris-claro: #F4F7FB;
+    --gris-medio: #8898AA;
+    --texto: #1A2840;
+    --acento: #42A5F5;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --sombra: 0 4px 24px rgba(11,61,107,0.12);
+    --sombra-fuerte: 0 12px 40px rgba(11,61,107,0.22);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--texto);
+    background: var(--blanco);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(11,61,107,0.97);
+    backdrop-filter: blur(10px);
+    padding: 0 20px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blanco);
+  }
+
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--acento);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: white;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    line-height: 1.1;
+  }
+
+  .logo-name {
+    font-family: var(--font-display);
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: white;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  nav a {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  nav a:hover { color: white; background: rgba(255,255,255,0.1); }
+
+  .btn-wa-header {
+    background: var(--celeste);
+    color: white !important;
+    padding: 8px 16px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s !important;
+  }
+
+  .btn-wa-header:hover { background: var(--verde-dark) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    top: 68px; left: 0; right: 0;
+    background: var(--azul);
+    padding: 16px 20px 24px;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 999;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    animation: slideDown 0.3s ease;
+  }
+
+  .nav-mobile.open { display: flex; }
+
+  .nav-mobile a {
+    color: rgba(255,255,255,0.85);
+    font-size: 17px;
+    font-weight: 500;
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: block;
+  }
+
+  .nav-mobile .btn-wa-header {
+    margin-top: 12px;
+    justify-content: center;
+    padding: 14px !important;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    background:
+      linear-gradient(160deg, rgba(11,61,107,0.95) 0%, rgba(21,101,168,0.85) 55%, rgba(66,165,245,0.25) 100%),
+      url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1800&q=85') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 100px 20px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(30,136,229,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 680px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    color: rgba(255,255,255,0.9);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--celeste);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 9vw, 88px);
+    line-height: 0.95;
+    color: white;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span { color: var(--celeste); }
+
+  .hero-sub {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all 0.25s;
+    border: 2px solid transparent;
+    min-height: 52px;
+    white-space: nowrap;
+  }
+
+  .btn-verde {
+    background: var(--celeste);
+    color: white;
+    box-shadow: 0 4px 20px rgba(30,136,229,0.35);
+  }
+
+  .btn-verde:hover {
+    background: var(--verde-dark);
+    box-shadow: 0 6px 28px rgba(30,136,229,0.45);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .stat { color: white; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 38px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+  }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* ── SECCIONES GENERALES ── */
+  section { padding: 80px 20px; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--azul-claro);
+    background: rgba(11,61,107,0.08);
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--azul-claro);
+    border-radius: 0 50px 50px 0;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: 2px;
+    color: var(--texto);
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  .section-sub {
+    color: var(--gris-medio);
+    font-size: 17px;
+    font-weight: 300;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .section-header { margin-bottom: 48px; }
+
+  /* ── SERVICIOS ── */
+  #servicios { background: var(--gris-claro); }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .servicio-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 22px;
+    transition: all 0.3s;
+    border: 1px solid rgba(11,61,107,0.06);
+    cursor: pointer;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .servicio-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: linear-gradient(90deg, var(--azul-claro), var(--celeste));
+    transition: width 0.4s ease;
+  }
+
+  .servicio-card:hover { transform: translateY(-4px); box-shadow: var(--sombra-fuerte); }
+  .servicio-card:hover::before { width: 100%; }
+
+  .servicio-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, rgba(21,101,168,0.1), rgba(30,136,229,0.08));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .servicio-nombre {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--texto);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .servicio-desc {
+    font-size: 13.5px;
+    color: var(--gris-medio);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* ── HORARIOS ── */
+  #horarios { background: var(--azul); position: relative; overflow: hidden; }
+
+  #horarios::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(30,136,229,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .horarios-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .horarios-tabla {
+    background: rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .horario-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+  }
+
+  .horario-fila:last-child { border-bottom: none; }
+  .horario-dia { font-weight: 500; color: rgba(255,255,255,0.85); }
+  .horario-hora { font-weight: 700; color: #FFFFFF; }
+  .horario-cerrado { color: rgba(255,255,255,0.35); font-style: italic; }
+
+  .estado-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+
+  .estado-abierto { background: rgba(30,136,229,0.18); color: #90CAF9; border: 1px solid rgba(30,136,229,0.35); }
+  .estado-cerrado { background: rgba(66,165,245,0.15); color: #FF6B6B; border: 1px solid rgba(66,165,245,0.3); }
+
+  #horarios .section-title, #horarios .section-sub, #horarios .section-tag { color: white !important; }
+  #horarios .section-tag { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); }
+
+  /* ── POR QUÉ ELEGIRNOS ── */
+  .diferenciadores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .dif-card {
+    background: var(--gris-claro);
+    border-radius: 16px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+
+  .dif-card:hover {
+    border-color: rgba(21,101,168,0.2);
+    box-shadow: var(--sombra);
+    transform: translateY(-2px);
+  }
+
+  .dif-icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--azul-claro), var(--celeste));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+
+  .dif-titulo {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--texto);
+    line-height: 1.2;
+  }
+
+  .dif-texto {
+    font-size: 14px;
+    color: var(--gris-medio);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* ── OBRAS SOCIALES ── */
+  #obras { background: var(--gris-claro); }
+
+  .obras-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .obra-chip {
+    background: white;
+    border: 1.5px solid rgba(21,101,168,0.15);
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 50px;
+    transition: all 0.2s;
+  }
+
+  .obra-chip:hover {
+    background: var(--azul);
+    color: white;
+    border-color: var(--azul);
+    transform: scale(1.03);
+  }
+
+  .obras-cta {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gris-medio);
+    font-size: 15px;
+  }
+
+  /* ── TESTIMONIOS ── */
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonio-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(11,61,107,0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonio-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px; right: 20px;
+    font-family: var(--font-display);
+    font-size: 80px;
+    color: rgba(21,101,168,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .estrellas { color: #FFB800; font-size: 18px; margin-bottom: 12px; letter-spacing: 1px; }
+  .testimonio-texto {
+    font-size: 15px;
+    color: var(--texto);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+  .testimonio-autor { font-weight: 700; font-size: 15px; color: var(--texto); }
+  .testimonio-esp { font-size: 13px; color: var(--azul-claro); font-weight: 500; }
+
+  /* ── UBICACIÓN ── */
+  #ubicacion { background: white; }
+
+  .ubicacion-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ubicacion-info { display: flex; flex-direction: column; gap: 16px; }
+
+  .info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--gris-claro);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+
+  .info-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .info-label { font-size: 12px; font-weight: 600; color: var(--gris-medio); text-transform: uppercase; letter-spacing: 1px; }
+  .info-val { font-size: 16px; font-weight: 600; color: var(--texto); margin-top: 2px; }
+  .info-sub { font-size: 13px; color: var(--gris-medio); margin-top: 2px; }
+
+  .mapa-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    height: 280px;
+  }
+
+  .mapa-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ── CONTACTO ── */
+  #contacto { background: var(--gris-claro); }
+
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .contacto-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid rgba(11,61,107,0.07);
+    transition: all 0.2s;
+  }
+
+  .contacto-card:hover {
+    box-shadow: var(--sombra);
+    transform: translateX(4px);
+  }
+
+  .contacto-icon-wrap {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .ci-wa { background: rgba(30,136,229,0.12); }
+  .ci-tel { background: rgba(21,101,168,0.1); }
+  .ci-email { background: rgba(66,165,245,0.12); }
+  .ci-ig { background: rgba(30,136,229,0.12); }
+
+  .contacto-label { font-size: 12px; color: var(--gris-medio); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .contacto-val { font-size: 17px; font-weight: 700; color: var(--texto); margin-top: 2px; }
+
+  .btn-wa-grande {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--celeste);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 28px;
+    border-radius: 14px;
+    box-shadow: 0 6px 28px rgba(30,136,229,0.35);
+    transition: all 0.2s;
+    min-height: 64px;
+  }
+
+  .btn-wa-grande:hover {
+    background: var(--verde-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 36px rgba(30,136,229,0.45);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--texto);
+    color: rgba(255,255,255,0.65);
+    padding: 48px 20px 28px;
+  }
+
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 24px;
+  }
+
+  .footer-logo .logo-name { font-size: 28px; }
+  .footer-logo .logo-sub { margin-top: 4px; }
+
+  .footer-info { font-size: 14px; line-height: 1.8; }
+  .footer-links { display: flex; flex-direction: column; gap: 6px; }
+  .footer-links a { font-size: 14px; transition: color 0.2s; }
+  .footer-links a:hover { color: white; }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .social-btn {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s;
+  }
+
+  .social-btn:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── FLOTANTE WHATSAPP ── */
+  .wa-flotante {
+    position: fixed;
+    bottom: 28px; right: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--celeste);
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 20px 14px 16px;
+    border-radius: 50px;
+    box-shadow: 0 6px 28px rgba(30,136,229,0.45);
+    cursor: pointer;
+    transition: all 0.25s;
+    animation: pulseWA 2.5s infinite;
+  }
+
+  .wa-flotante:hover { background: var(--verde-dark); transform: translateY(-2px); animation: none; }
+  .wa-flotante .wa-icon { font-size: 22px; flex-shrink: 0; }
+  .wa-flotante .wa-text { white-space: nowrap; }
+
+  @keyframes pulseWA {
+    0% { box-shadow: 0 6px 28px rgba(30,136,229,0.45); }
+    50% { box-shadow: 0 6px 40px rgba(30,136,229,0.7), 0 0 0 8px rgba(30,136,229,0.12); }
+    100% { box-shadow: 0 6px 28px rgba(30,136,229,0.45); }
+  }
+
+  /* ── RESPONSIVE TABLET / DESKTOP ── */
+  @media (min-width: 640px) {
+    .servicios-grid { grid-template-columns: repeat(3, 1fr); }
+    .testimonios-grid { grid-template-columns: repeat(3, 1fr); }
+    .contacto-grid { grid-template-columns: repeat(2, 1fr); }
+    .diferenciadores { grid-template-columns: repeat(2, 1fr); }
+    .horarios-layout { grid-template-columns: 1fr 1fr; align-items: start; }
+    .ubicacion-layout { grid-template-columns: 1fr 1fr; align-items: start; }
+    .mapa-wrapper { height: 360px; }
+    .footer-top { flex-direction: row; }
+    nav { display: flex; }
+    .hamburger { display: none; }
+  }
+
+  @media (min-width: 900px) {
+    .servicios-grid { grid-template-columns: repeat(4, 1fr); }
+    .diferenciadores { grid-template-columns: repeat(4, 1fr); }
+    nav a { font-size: 15px; }
+    .wa-flotante .wa-text { display: block; }
+  }
+
+  @media (max-width: 639px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+    .wa-flotante .wa-text { display: none; }
+    .wa-flotante { padding: 15px; border-radius: 50%; }
+    .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .hero-btns { flex-direction: column; }
+    .hero-btns .btn { width: 100%; }
+  }
+
+  .logo-img {
+    height: 46px;
+    width: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  .logo-img-color {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+  .logo-img-footer {
+    height: 54px;
+    width: auto;
+    display: block;
+    border-radius: 8px;
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#inicio" class="logo" aria-label="Kronos Centro Médico">
+    <img src="data:image/png;base64,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" alt="Kronos Centro Médico de Alto Rendimiento" class="logo-img" width="44" height="44" loading="eager">
+    <div class="logo-text">
+      <div class="logo-name">KRONOS</div>
+      <div class="logo-sub">Medicina del Deporte</div>
+    </div>
+  </a>
+
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#horarios">Horarios</a>
+    <a href="#obras">Coberturas</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20pedir%20un%20turno" target="_blank" rel="noopener" class="btn-wa-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.126 1.526 5.869L0 24l6.322-1.479A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.543 9.543 0 01-4.878-1.339l-.35-.208-3.614.846.888-3.486-.228-.362A9.543 9.543 0 012.4 12C2.4 6.699 6.699 2.4 12 2.4c5.301 0 9.6 4.299 9.6 9.6 0 5.301-4.299 9.6-9.6 9.6z"/></svg>
+      Turnos WhatsApp
+    </a>
+  </nav>
+
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MENÚ MÓVIL -->
+<div class="nav-mobile" id="navMobile">
+  <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+  <a href="#horarios" onclick="toggleMenu()">Horarios</a>
+  <a href="#obras" onclick="toggleMenu()">Coberturas</a>
+  <a href="#testimonios" onclick="toggleMenu()">Opiniones</a>
+  <a href="#ubicacion" onclick="toggleMenu()">Ubicación</a>
+  <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+  <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20pedir%20un%20turno" target="_blank" rel="noopener" class="btn-wa-header">
+    📱 Pedir turno por WhatsApp
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-badge">Centro Médico de Alto Rendimiento</div>
+    <h1>TU CUERPO <span>MERECE</span> LO MEJOR</h1>
+    <p class="hero-sub">Medicina del deporte, cardiología, traumatología y más especialidades al servicio de tu salud en San Juan.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20pedir%20un%20turno" target="_blank" rel="noopener" class="btn btn-verde">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.126 1.526 5.869L0 24l6.322-1.479A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.543 9.543 0 01-4.878-1.339l-.35-.208-3.614.846.888-3.486-.228-.362A9.543 9.543 0 012.4 12C2.4 6.699 6.699 2.4 12 2.4c5.301 0 9.6 4.299 9.6 9.6 0 5.301-4.299 9.6-9.6 9.6z"/></svg>
+        Pedir turno por WhatsApp
+      </a>
+      <a href="#servicios" class="btn btn-outline">Ver servicios ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">+15</div>
+        <div class="stat-label">Especialidades</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">+20</div>
+        <div class="stat-label">Profesionales</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Seguimiento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Lo que hacemos</div>
+      <h2 class="section-title">NUESTROS SERVICIOS</h2>
+      <p class="section-sub">Especialidades médicas de primer nivel para deportistas y para toda la familia.</p>
+    </div>
+    <div class="servicios-grid">
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20un%20turno%20para%20Cl%C3%ADnica%20M%C3%A9dica" target="_blank" rel="noopener" class="servicio-card">
+        <div class="servicio-icon">🩺</div>
+        <div class="servicio-nombre">Clínica Médica</div>
+        <div class="servicio-desc">Atención integral del adulto, diagnóstico y seguimiento de enfermedades.</div>
+      </a>
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20un%20turno%20para%20Medicina%20del%20Deporte" target="_blank" rel="noopener" class="servicio-card">
+        <div class="servicio-icon">🏃</div>
+        <div class="servicio-nombre">Medicina del Deporte</div>
+        <div class="servicio-desc">Evaluación y aptitud física para atletas amateurs y profesionales.</div>
+      </a>
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20un%20turno%20para%20Cardiolog%C3%ADa" target="_blank" rel="noopener" class="servicio-card">
+        <div class="servicio-icon">❤️</div>
+        <div class="servicio-nombre">Cardiología</div>
+        <div class="servicio-desc">Cardiología clínica, deportiva y rehabilitación cardiovascular.</div>
+      </a>
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20un%20turno%20para%20Traumatolog%C3%ADa" target="_blank" rel="noopener" class="servicio-card">
+        <div class="servicio-icon">🦴</div>
+        <div class="servicio-nombre">Traumatología</div>
+        <div class="servicio-desc">Diagnóstico y tratamiento de lesiones músculo-esqueléticas.</div>
+      </a>
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20un%20turno%20para%20Nutrici%C3%B3n" target="_blank" rel="noopener" class="servicio-card">
+        <div class="servicio-icon">🥗</div>
+        <div class="servicio-nombre">Nutrición Deportiva</div>
+        <div class="servicio-desc">Planes nutricionales personalizados para optimizar el rendimiento.</div>
+      </a>
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20un%20turno%20para%20Dermatolog%C3%ADa" target="_blank" rel="noopener" class="servicio-card">
+        <div class="servicio-icon">🌿</div>
+        <div class="servicio-nombre">Dermatología</div>
+        <div class="servicio-desc">Diagnóstico y tratamiento de afecciones de la piel.</div>
+      </a>
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20un%20turno%20para%20Gastroenterolog%C3%ADa" target="_blank" rel="noopener" class="servicio-card">
+        <div class="servicio-icon">🔬</div>
+        <div class="servicio-nombre">Gastroenterología</div>
+        <div class="servicio-desc">Estudios y tratamiento del sistema digestivo.</div>
+      </a>
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20un%20turno%20para%20Medicina%20Est%C3%A9tica" target="_blank" rel="noopener" class="servicio-card">
+        <div class="servicio-icon">✨</div>
+        <div class="servicio-nombre">Medicina Estética</div>
+        <div class="servicio-desc">Tratamientos estéticos con tecnología de alto rendimiento.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIOS -->
+<section id="horarios">
+  <div class="section-inner">
+    <div class="horarios-layout">
+      <div>
+        <div class="section-tag">Atención</div>
+        <h2 class="section-title">HORARIOS</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.6)">Atendemos de lunes a sábados. Te esperamos en Santa Fe 264 Oeste, San Juan.</p>
+        <div style="margin-top: 28px;">
+          <div class="estado-badge estado-abierto" id="estadoBadge">
+            <span id="estadoPunto" style="width:10px;height:10px;border-radius:50%;background:currentColor;display:inline-block;"></span>
+            <span id="estadoTexto">Verificando…</span>
+          </div>
+          <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20consultar%20disponibilidad" target="_blank" rel="noopener" class="btn btn-verde" style="display:inline-flex;margin-top:8px;">
+            Consultar disponibilidad
+          </a>
+        </div>
+      </div>
+      <div class="horarios-tabla">
+        <div class="horario-fila">
+          <span class="horario-dia">Lunes a Viernes</span>
+          <span class="horario-hora">9:00 – 21:00</span>
+        </div>
+        <div class="horario-fila">
+          <span class="horario-dia">Sábados</span>
+          <span class="horario-hora">9:00 – 13:00</span>
+        </div>
+        <div class="horario-fila">
+          <span class="horario-dia">Domingos y Feriados</span>
+          <span class="horario-cerrado">Cerrado</span>
+        </div>
+        <div style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.6;">
+            📍 Santa Fe 264 Oeste, San Juan<br>
+            📞 264 422-1470
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ ELEGIRNOS -->
+<section id="elegirnos">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Por qué Kronos</div>
+      <h2 class="section-title">NUESTROS DIFERENCIALES</h2>
+    </div>
+    <div class="diferenciadores">
+      <div class="dif-card">
+        <div class="dif-icon">🏅</div>
+        <div class="dif-titulo">Profesionales Certificados</div>
+        <div class="dif-texto">Médicos con matrículas vigentes y actualización constante en sus especialidades.</div>
+      </div>
+      <div class="dif-card">
+        <div class="dif-icon">🎯</div>
+        <div class="dif-titulo">Atención Personalizada</div>
+        <div class="dif-texto">Cada paciente recibe un plan de atención adaptado a su perfil y objetivos.</div>
+      </div>
+      <div class="dif-card">
+        <div class="dif-icon">💳</div>
+        <div class="dif-titulo">Obras Sociales y Prepagas</div>
+        <div class="dif-texto">Trabajamos con las principales coberturas médicas de San Juan y el país.</div>
+      </div>
+      <div class="dif-card">
+        <div class="dif-icon">⚡</div>
+        <div class="dif-titulo">Turnos en el Día</div>
+        <div class="dif-texto">Pedí tu turno por WhatsApp y accedé a la atención rápida cuando la necesitás.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBRAS SOCIALES -->
+<section id="obras">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Coberturas</div>
+      <h2 class="section-title">TRABAJAMOS CON TU COBERTURA</h2>
+      <p class="section-sub">Aceptamos las principales obras sociales y prepagas del país.</p>
+    </div>
+    <div class="obras-grid">
+      <span class="obra-chip">OSDE</span>
+      <span class="obra-chip">Swiss Medical</span>
+      <span class="obra-chip">Galeno</span>
+      <span class="obra-chip">Medicus</span>
+      <span class="obra-chip">PAMI</span>
+      <span class="obra-chip">IOMA</span>
+      <span class="obra-chip">OSPIP</span>
+      <span class="obra-chip">Sancor Salud</span>
+      <span class="obra-chip">Prevencion Salud</span>
+      <span class="obra-chip">OSPACP</span>
+      <span class="obra-chip">OSECAC</span>
+      <span class="obra-chip">OSPRERA</span>
+    </div>
+    <div class="obras-cta">
+      <span>¿No encontrás tu cobertura?</span>
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20consultar%20si%20trabajan%20con%20mi%20cobertura" target="_blank" rel="noopener" style="color:var(--azul-claro);font-weight:700;">Consultanos por WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios" style="background: white;">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Opiniones</div>
+      <h2 class="section-title">LO QUE DICEN NUESTROS PACIENTES</h2>
+    </div>
+    <div class="testimonios-grid">
+      <div class="testimonio-card">
+        <div class="estrellas">★★★★★</div>
+        <p class="testimonio-texto">Excelente atención en todas las especialidades. El equipo es muy profesional y te hacen sentir muy contenido desde el principio. Recomendado 100%.</p>
+        <div class="testimonio-autor">Mariana G.</div>
+        <div class="testimonio-esp">Nutrición Deportiva</div>
+      </div>
+      <div class="testimonio-card">
+        <div class="estrellas">★★★★★</div>
+        <p class="testimonio-texto">Fui por un apto físico para competencia y el Dr. Flores fue increíblemente detallista. Me explicó todo y me dio un informe completo. Volvería sin dudas.</p>
+        <div class="testimonio-autor">Diego R.</div>
+        <div class="testimonio-esp">Medicina del Deporte</div>
+      </div>
+      <div class="testimonio-card">
+        <div class="estrellas">★★★★★</div>
+        <p class="testimonio-texto">La rehabilitación cardiovascular fue un proceso muy bien acompañado. El Dr. Zain Pedraza es muy humano y competente. Excelente infraestructura.</p>
+        <div class="testimonio-autor">Carlos M.</div>
+        <div class="testimonio-esp">Cardiología</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Dónde estamos</div>
+      <h2 class="section-title">CÓMO LLEGAR</h2>
+    </div>
+    <div class="ubicacion-layout">
+      <div class="ubicacion-info">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <div class="info-label">Dirección</div>
+            <div class="info-val">Santa Fe 264 Oeste</div>
+            <div class="info-sub">San Juan, Argentina</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <div class="info-label">Teléfono</div>
+            <div class="info-val">(264) 422-1470</div>
+            <div class="info-sub">Lunes a Sábados, 9 a 21 hs</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🚌</div>
+          <div>
+            <div class="info-label">Cómo llegar</div>
+            <div class="info-val">A 400 m de Plaza 25 de Mayo</div>
+            <div class="info-sub">Cerca de la Catedral y el centro cívico de San Juan</div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Santa+Fe+264+Oeste,+San+Juan,+Argentina" target="_blank" rel="noopener" class="btn btn-verde" style="display:inline-flex;width:fit-content;">
+          🗺️ Abrir en Google Maps
+        </a>
+      </div>
+      <div class="mapa-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.2!2d-68.5375!3d-31.5375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSanta+Fe+264+Oeste%2C+San+Juan!5e0!3m2!1ses!2sar!4v1620000000000"
+          width="600" height="360"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa Kronos Centro Médico">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Contacto</div>
+      <h2 class="section-title">CONTACTATE CON NOSOTROS</h2>
+      <p class="section-sub">Elegí el canal que prefieras. ¡Te respondemos rápido!</p>
+    </div>
+
+    <div class="contacto-grid">
+      <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener" class="contacto-card">
+        <div class="contacto-icon-wrap ci-wa">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1E88E5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.126 1.526 5.869L0 24l6.322-1.479A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.543 9.543 0 01-4.878-1.339l-.35-.208-3.614.846.888-3.486-.228-.362A9.543 9.543 0 012.4 12C2.4 6.699 6.699 2.4 12 2.4c5.301 0 9.6 4.299 9.6 9.6 0 5.301-4.299 9.6-9.6 9.6z"/></svg>
+        </div>
+        <div>
+          <div class="contacto-label">WhatsApp</div>
+          <div class="contacto-val">+54 264 422-1470</div>
+        </div>
+      </a>
+      <a href="tel:+542644221470" class="contacto-card">
+        <div class="contacto-icon-wrap ci-tel">📞</div>
+        <div>
+          <div class="contacto-label">Teléfono</div>
+          <div class="contacto-val">(264) 422-1470</div>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/kronosar/" target="_blank" rel="noopener" class="contacto-card">
+        <div class="contacto-icon-wrap ci-ig">📷</div>
+        <div>
+          <div class="contacto-label">Instagram</div>
+          <div class="contacto-val">@kronosar</div>
+        </div>
+      </a>
+      <div class="contacto-card">
+        <div class="contacto-icon-wrap ci-email">📍</div>
+        <div>
+          <div class="contacto-label">Dirección</div>
+          <div class="contacto-val">Santa Fe 264 Oeste</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/5492644221470?text=Hola,%20quiero%20pedir%20un%20turno%20en%20Kronos" target="_blank" rel="noopener" class="btn-wa-grande">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.126 1.526 5.869L0 24l6.322-1.479A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.543 9.543 0 01-4.878-1.339l-.35-.208-3.614.846.888-3.486-.228-.362A9.543 9.543 0 012.4 12C2.4 6.699 6.699 2.4 12 2.4c5.301 0 9.6 4.299 9.6 9.6 0 5.301-4.299 9.6-9.6 9.6z"/></svg>
+      Pedir turno por WhatsApp ahora
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <div class="logo" style="color:white;">
+          <img src="data:image/png;base64,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" alt="Kronos" class="logo-img-footer" width="52" height="52" loading="lazy">
+          <div class="logo-text">
+            <div class="logo-name">KRONOS</div>
+            <div class="logo-sub">Medicina del Deporte y Alto Rendimiento</div>
+          </div>
+        </div>
+        <div class="footer-social" style="margin-top:16px;">
+          <a href="https://www.instagram.com/kronosar/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-info">
+        <strong style="color:rgba(255,255,255,0.8);">Información del establecimiento</strong><br>
+        Santa Fe 264 Oeste, San Juan, Argentina<br>
+        Tel: (264) 422-1470<br>
+        Instagram: @kronosar<br><br>
+        <strong style="color:rgba(255,255,255,0.8);">Horarios</strong><br>
+        Lun – Vie: 9:00 a 21:00<br>
+        Sáb: 9:00 a 13:00
+      </div>
+      <div class="footer-links">
+        <strong style="color:rgba(255,255,255,0.8);font-size:14px;margin-bottom:8px;display:block;">Navegación</strong>
+        <a href="#servicios">Servicios</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#obras">Coberturas</a>
+        <a href="#testimonios">Opiniones</a>
+        <a href="#ubicacion">Cómo llegar</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Kronos Centro Médico de Alto Rendimiento · San Juan, Argentina</span>
+      <span>Grupo Mitre Salud · <a href="#" style="color:inherit;">Política de privacidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOTANTE WHATSAPP -->
+<a href="https://wa.me/5492644221470?text=Hola,%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener" class="wa-flotante" aria-label="Contactar por WhatsApp">
+  <svg class="wa-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.126 1.526 5.869L0 24l6.322-1.479A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.543 9.543 0 01-4.878-1.339l-.35-.208-3.614.846.888-3.486-.228-.362A9.543 9.543 0 012.4 12C2.4 6.699 6.699 2.4 12 2.4c5.301 0 9.6 4.299 9.6 9.6 0 5.301-4.299 9.6-9.6 9.6z"/></svg>
+  <span class="wa-text">Consultar</span>
+</a>
+
+<script>
+  // Menú móvil
+  function toggleMenu() {
+    const menu = document.getElementById('navMobile');
+    menu.classList.toggle('open');
+  }
+
+  // Estado abierto / cerrado
+  function verificarEstado() {
+    const ahora = new Date();
+    const dia = ahora.getDay(); // 0=dom, 1=lun... 6=sab
+    const hora = ahora.getHours() + ahora.getMinutes() / 60;
+    let abierto = false;
+
+    if (dia >= 1 && dia <= 5 && hora >= 9 && hora < 21) abierto = true;
+    if (dia === 6 && hora >= 9 && hora < 13) abierto = true;
+
+    const badge = document.getElementById('estadoBadge');
+    const texto = document.getElementById('estadoTexto');
+
+    if (abierto) {
+      badge.className = 'estado-badge estado-abierto';
+      texto.textContent = 'Abierto ahora — te esperamos';
+    } else {
+      badge.className = 'estado-badge estado-cerrado';
+      const esLunVie = dia >= 1 && dia <= 5;
+      const esSab = dia === 6;
+      if (esLunVie) texto.textContent = 'Cerrado · Abre a las 9:00 hs';
+      else if (esSab) texto.textContent = 'Cerrado · Sábados 9:00–13:00';
+      else texto.textContent = 'Cerrado — reabrimos el lunes';
+    }
+  }
+
+  verificarEstado();
+
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('navMobile');
+    if (menu.classList.contains('open') && !e.target.closest('header') && !e.target.closest('.nav-mobile')) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
