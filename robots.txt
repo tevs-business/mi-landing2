@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# No indexar archivos de configuración
+Disallow: /netlify.toml
+
+Sitemap: https://kronoscentromedico.com.ar/sitemap.xml

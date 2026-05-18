@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada · Kronos Centro Médico</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: #0B3D6B;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(100px, 25vw, 180px);
+    line-height: 1;
+    color: rgba(255,255,255,0.08);
+    letter-spacing: 8px;
+  }
+  .icon { font-size: 64px; margin: -20px 0 20px; }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 6vw, 48px);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+  p {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 36px;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  a.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    min-height: 50px;
+  }
+  .btn-primary { background: #1E88E5; color: white; }
+  .btn-primary:hover { background: #1565C0; transform: translateY(-2px); }
+  .btn-outline { border: 2px solid rgba(255,255,255,0.3); color: white; }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+</style>
+</head>
+<body>
+  <div class="num">404</div>
+  <div class="icon">🏥</div>
+  <h1>PÁGINA NO ENCONTRADA</h1>
+  <p>El contenido que buscás no existe o fue movido. Podés volver al inicio o contactarnos directamente.</p>
+  <div class="btns">
+    <a href="/" class="btn btn-primary">← Volver al inicio</a>
+    <a href="https://wa.me/5492645860993?text=Hola,%20necesito%20ayuda" target="_blank" rel="noopener" class="btn btn-outline">💬 Contactar por WhatsApp</a>
+  </div>
+</body>
+</html>
