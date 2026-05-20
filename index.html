@@ -207,85 +207,120 @@
   /* ── HERO ── */
   .hero {
     min-height: 100svh;
-    background:
-      linear-gradient(160deg, rgba(11,61,107,0.95) 0%, rgba(21,101,168,0.85) 55%, rgba(66,165,245,0.25) 100%),
-      url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1800&q=85') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    padding: 100px 20px 60px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
+  /* Imagen de fondo separada para controlar position en mobile */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=900&q=90&auto=format&fit=crop')
+      center 30% / cover no-repeat;
+    z-index: 0;
+  }
+
+  /* Gradiente fuerte desde abajo en mobile: texto siempre legible */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(11,61,107,0.55) 0%,
+        rgba(11,61,107,0.30) 30%,
+        rgba(11,61,107,0.75) 60%,
+        rgba(11,61,107,0.97) 100%
+      );
+  }
+
+  /* Franja decorativa superior */
   .hero::before {
     content: '';
     position: absolute;
-    top: -50%; right: -20%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(30,136,229,0.12) 0%, transparent 70%);
-    pointer-events: none;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul-claro), var(--celeste), var(--acento));
+    z-index: 10;
   }
 
   .hero-inner {
-    max-width: 680px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 88px 24px 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
   }
 
   .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.25);
-    backdrop-filter: blur(8px);
-    color: rgba(255,255,255,0.9);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.28);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: rgba(255,255,255,0.92);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 8px 16px;
+    padding: 7px 14px;
     border-radius: 50px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .hero-badge::before {
     content: '';
-    width: 8px; height: 8px;
+    width: 7px; height: 7px;
     background: var(--celeste);
     border-radius: 50%;
+    flex-shrink: 0;
     animation: pulse-dot 2s infinite;
   }
 
   @keyframes pulse-dot {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.7); }
+    50% { opacity: 0.4; transform: scale(0.6); }
   }
 
   .hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(52px, 9vw, 88px);
-    line-height: 0.95;
+    font-size: clamp(48px, 13vw, 88px);
+    line-height: 0.92;
     color: white;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
 
-  .hero h1 span { color: var(--celeste); }
+  .hero h1 span { color: var(--acento); }
 
   .hero-sub {
-    font-size: clamp(16px, 2.5vw, 20px);
-    color: rgba(255,255,255,0.78);
+    font-size: clamp(15px, 4vw, 18px);
+    color: rgba(255,255,255,0.80);
     font-weight: 300;
-    margin-bottom: 36px;
-    max-width: 500px;
-    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 460px;
+    line-height: 1.65;
   }
 
   .hero-btns {
     display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 380px;
   }
 
   .btn {
@@ -294,63 +329,84 @@
     justify-content: center;
     gap: 8px;
     padding: 16px 28px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 16px;
     font-weight: 600;
     font-family: var(--font-body);
     cursor: pointer;
     transition: all 0.25s;
     border: 2px solid transparent;
-    min-height: 52px;
+    min-height: 54px;
     white-space: nowrap;
   }
 
   .btn-verde {
     background: var(--celeste);
     color: white;
-    box-shadow: 0 4px 20px rgba(30,136,229,0.35);
+    box-shadow: 0 4px 20px rgba(30,136,229,0.45);
+    width: 100%;
   }
 
   .btn-verde:hover {
     background: var(--verde-dark);
-    box-shadow: 0 6px 28px rgba(30,136,229,0.45);
+    box-shadow: 0 6px 28px rgba(30,136,229,0.55);
     transform: translateY(-1px);
   }
 
   .btn-outline {
-    background: transparent;
+    background: rgba(255,255,255,0.08);
     color: white;
-    border-color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(8px);
+    width: 100%;
   }
 
   .btn-outline:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.16);
     border-color: white;
   }
 
+  /* Stats en fila horizontal compacta debajo de los botones */
   .hero-stats {
     display: flex;
-    gap: 32px;
-    margin-top: 48px;
-    padding-top: 36px;
-    border-top: 1px solid rgba(255,255,255,0.15);
+    gap: 0;
+    margin-top: 32px;
+    width: 100%;
+    max-width: 380px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    overflow: hidden;
   }
 
-  .stat { color: white; }
+  .stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 8px;
+    border-right: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .stat:last-child { border-right: none; }
+
   .stat-num {
     font-family: var(--font-display);
-    font-size: 38px;
+    font-size: 30px;
     line-height: 1;
     letter-spacing: 1px;
     color: #FFFFFF;
   }
+
   .stat-label {
-    font-size: 12px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.85);
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 2px;
+    margin-top: 4px;
+    text-align: center;
   }
 
   /* ── SECCIONES GENERALES ── */
@@ -825,6 +881,39 @@
     100% { box-shadow: 0 6px 28px rgba(30,136,229,0.45); }
   }
 
+  /* ── HERO DESKTOP ── */
+  @media (min-width: 640px) {
+    .hero {
+      justify-content: center;
+    }
+    .hero-bg {
+      background-position: center center;
+    }
+    .hero-inner {
+      padding: 120px 40px 60px;
+      max-width: 1100px;
+    }
+    .hero-btns {
+      flex-direction: row;
+      max-width: none;
+      width: auto;
+    }
+    .btn-verde, .btn-outline {
+      width: auto;
+    }
+    .hero-stats {
+      max-width: none;
+      width: auto;
+      display: inline-flex;
+    }
+    .hero h1 {
+      font-size: clamp(64px, 8vw, 96px);
+    }
+    .stat-num { font-size: 36px; }
+    .stat-label { font-size: 11px; }
+    .stat { padding: 16px 28px; }
+  }
+
   /* ── RESPONSIVE TABLET / DESKTOP ── */
   @media (min-width: 640px) {
     .servicios-grid { grid-template-columns: repeat(3, 1fr); }
@@ -919,17 +1008,26 @@
 
 <!-- HERO -->
 <section class="hero" id="inicio">
+  <!-- Imagen separada para control total en mobile -->
+  <div class="hero-bg" role="img" aria-label="Interior de Kronos Centro Médico"></div>
+
   <div class="hero-inner">
-    <div class="hero-badge">Centro Médico de Alto Rendimiento</div>
-    <h1>TU CUERPO <span>MERECE</span> LO MEJOR</h1>
-    <p class="hero-sub">Medicina del deporte, cardiología, traumatología y más especialidades al servicio de tu salud en San Juan.</p>
+    <div class="hero-badge">Centro Médico de Alto Rendimiento · San Juan</div>
+
+    <h1>TU CUERPO<br><span>MERECE</span><br>LO MEJOR</h1>
+
+    <p class="hero-sub">Medicina del deporte, cardiología, traumatología y más especialidades al servicio de tu salud.</p>
+
     <div class="hero-btns">
       <a href="https://wa.me/5492645860993?text=Hola,%20quiero%20pedir%20un%20turno" target="_blank" rel="noopener" class="btn btn-verde">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.126 1.526 5.869L0 24l6.322-1.479A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.543 9.543 0 01-4.878-1.339l-.35-.208-3.614.846.888-3.486-.228-.362A9.543 9.543 0 012.4 12C2.4 6.699 6.699 2.4 12 2.4c5.301 0 9.6 4.299 9.6 9.6 0 5.301-4.299 9.6-9.6 9.6z"/></svg>
         Pedir turno por WhatsApp
       </a>
-      <a href="#servicios" class="btn btn-outline">Ver servicios ↓</a>
+      <a href="#servicios" class="btn btn-outline">
+        Ver nuestros servicios ↓
+      </a>
     </div>
+
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-num">+15</div>
